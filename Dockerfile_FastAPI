@@ -1,0 +1,17 @@
+FROM nvidia/cuda:12.1.1-base-ubuntu20.04
+
+RUN apt-get -y update
+RUN apt-get -y install python3
+RUN apt-get -y install python3-pip
+
+RUN mkdir /code
+
+WORKDIR /code
+
+COPY ./backend/requirements.txt /code/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade "torch==2.0.0"
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY ./backend/app /code/app
+RUN cp /usr/local/lib/python3.8/dist-packages/bitsandbytes/libbitsandbytes_cuda118.so /usr/local/lib/python3.8/dist-packages/bitsandbytes/libbitsandbytes_cpu.so
+# CMD ["uvicorn", "app.main:app", "--host=0.0.0.0", "--port=80"]

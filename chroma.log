@@ -1,0 +1,717 @@
+2023-05-15 18:57:33 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-15 18:57:33 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-15 18:57:33 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-15 18:57:33 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-15 18:57:33 INFO     chromadb        Running Chroma using direct local API.
+2023-05-15 18:57:33 INFO     chromadb        Using Clickhouse for database
+2023-05-15 18:57:33 INFO     uvicorn.error   Started server process [8]
+2023-05-15 18:57:33 INFO     uvicorn.error   Waiting for application startup.
+2023-05-15 18:57:33 INFO     uvicorn.error   Application startup complete.
+2023-05-15 19:03:23 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:03:51 INFO     uvicorn.access  172.18.0.1:47138 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:04:25 INFO     uvicorn.access  172.18.0.1:38276 - "POST /api/v1/collections/all-my-documents/add HTTP/1.1" 400
+2023-05-15 19:05:09 INFO     uvicorn.access  172.18.0.1:54372 - "POST /api/v1/collections/all-my-documents/add HTTP/1.1" 400
+2023-05-15 19:07:49 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:07:49 INFO     uvicorn.access  172.18.0.1:50166 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:08:33 INFO     uvicorn.access  172.18.0.1:45418 - "POST /api/v1/collections/my_collection/add HTTP/1.1" 400
+2023-05-15 19:08:53 INFO     uvicorn.access  172.18.0.1:46190 - "POST /api/v1/collections/my_collection/add HTTP/1.1" 400
+2023-05-15 19:09:51 INFO     uvicorn.error   Shutting down
+2023-05-15 19:09:51 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-15 19:09:51 INFO     uvicorn.error   Application shutdown complete.
+2023-05-15 19:09:51 INFO     uvicorn.error   Finished server process [8]
+2023-05-15 19:09:52 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-15 19:09:59 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-15 19:09:59 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-15 19:09:59 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-15 19:10:00 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-15 19:10:00 INFO     chromadb        Running Chroma using direct local API.
+2023-05-15 19:10:00 INFO     chromadb        Using Clickhouse for database
+2023-05-15 19:10:00 INFO     uvicorn.error   Started server process [8]
+2023-05-15 19:10:00 INFO     uvicorn.error   Waiting for application startup.
+2023-05-15 19:10:00 INFO     uvicorn.error   Application startup complete.
+2023-05-15 19:10:22 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:10:48 INFO     uvicorn.access  172.19.0.1:60452 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:11:08 INFO     uvicorn.access  172.19.0.1:45072 - "POST /api/v1/collections/my_collection/add HTTP/1.1" 400
+2023-05-15 19:11:45 INFO     uvicorn.access  172.19.0.1:49376 - "GET /api/v1 HTTP/1.1" 200
+2023-05-15 19:12:01 INFO     uvicorn.access  172.19.0.1:60944 - "POST /api/v1/reset HTTP/1.1" 200
+2023-05-15 19:13:19 ERROR    chromadb.server.fastapi Collection test does not exist
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 57, in catch_exceptions_middleware
+    return await call_next(request)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 231, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 182, in get_collection
+    return self._api.get_collection(collection_name)
+  File "/chroma/./chromadb/api/local.py", line 145, in get_collection
+    raise ValueError(f"Collection {name} does not exist")
+ValueError: Collection test does not exist
+2023-05-15 19:13:19 INFO     uvicorn.access  172.19.0.1:50280 - "GET /api/v1/collections/test HTTP/1.1" 500
+2023-05-15 19:13:26 ERROR    chromadb.server.fastapi Collection my_collection does not exist
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 57, in catch_exceptions_middleware
+    return await call_next(request)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 231, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 182, in get_collection
+    return self._api.get_collection(collection_name)
+  File "/chroma/./chromadb/api/local.py", line 145, in get_collection
+    raise ValueError(f"Collection {name} does not exist")
+ValueError: Collection my_collection does not exist
+2023-05-15 19:13:26 INFO     uvicorn.access  172.19.0.1:52510 - "GET /api/v1/collections/my_collection HTTP/1.1" 500
+2023-05-15 19:14:59 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:14:59 INFO     uvicorn.access  172.19.0.1:35574 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:15:09 INFO     uvicorn.access  172.19.0.1:57090 - "POST /api/v1/collections/test/add HTTP/1.1" 400
+2023-05-15 19:17:59 ERROR    chromadb.server.fastapi Collection with name test already exists
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 57, in catch_exceptions_middleware
+    return await call_next(request)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 231, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 175, in create_collection
+    return self._api.create_collection(
+  File "/chroma/./chromadb/api/local.py", line 91, in create_collection
+    res = self._db.create_collection(name, metadata, get_or_create)
+  File "/chroma/./chromadb/db/clickhouse.py", line 168, in create_collection
+    raise ValueError(f"Collection with name {name} already exists")
+ValueError: Collection with name test already exists
+2023-05-15 19:17:59 INFO     uvicorn.access  172.19.0.1:47560 - "POST /api/v1/collections HTTP/1.1" 500
+2023-05-15 19:18:25 ERROR    chromadb.server.fastapi Collection with name test already exists
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 57, in catch_exceptions_middleware
+    return await call_next(request)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 231, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 175, in create_collection
+    return self._api.create_collection(
+  File "/chroma/./chromadb/api/local.py", line 91, in create_collection
+    res = self._db.create_collection(name, metadata, get_or_create)
+  File "/chroma/./chromadb/db/clickhouse.py", line 168, in create_collection
+    raise ValueError(f"Collection with name {name} already exists")
+ValueError: Collection with name test already exists
+2023-05-15 19:18:25 INFO     uvicorn.access  172.19.0.1:50212 - "POST /api/v1/collections HTTP/1.1" 500
+2023-05-15 19:19:19 ERROR    chromadb.server.fastapi Collection with name test already exists
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 94, in receive
+    return self.receive_nowait()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 89, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 43, in call_next
+    message = await recv_stream.receive()
+  File "/usr/local/lib/python3.10/site-packages/anyio/streams/memory.py", line 114, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 57, in catch_exceptions_middleware
+    return await call_next(request)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 46, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/base.py", line 36, in coro
+    await self.app(scope, request.receive, send_stream.send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 75, in __call__
+    raise exc
+  File "/usr/local/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 64, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/usr/local/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 680, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 275, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.10/site-packages/starlette/routing.py", line 65, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 231, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.10/site-packages/fastapi/routing.py", line 162, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "/usr/local/lib/python3.10/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "/usr/local/lib/python3.10/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/usr/local/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/chroma/./chromadb/server/fastapi/__init__.py", line 175, in create_collection
+    return self._api.create_collection(
+  File "/chroma/./chromadb/api/local.py", line 91, in create_collection
+    res = self._db.create_collection(name, metadata, get_or_create)
+  File "/chroma/./chromadb/db/clickhouse.py", line 168, in create_collection
+    raise ValueError(f"Collection with name {name} already exists")
+ValueError: Collection with name test already exists
+2023-05-15 19:19:19 INFO     uvicorn.access  172.19.0.1:49626 - "POST /api/v1/collections HTTP/1.1" 500
+2023-05-15 19:19:29 INFO     uvicorn.error   Shutting down
+2023-05-15 19:19:29 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-15 19:19:29 INFO     uvicorn.error   Application shutdown complete.
+2023-05-15 19:19:29 INFO     uvicorn.error   Finished server process [8]
+2023-05-15 19:19:30 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-15 19:29:14 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-15 19:29:14 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-15 19:29:14 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-15 19:29:15 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-15 19:29:15 INFO     chromadb        Running Chroma using direct local API.
+2023-05-15 19:29:15 INFO     chromadb        Using Clickhouse for database
+2023-05-15 19:29:15 INFO     uvicorn.error   Started server process [8]
+2023-05-15 19:29:15 INFO     uvicorn.error   Waiting for application startup.
+2023-05-15 19:29:15 INFO     uvicorn.error   Application startup complete.
+2023-05-15 19:31:18 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:31:40 INFO     uvicorn.access  172.20.0.1:39998 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:31:56 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-15 19:31:56 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-15 19:31:56 INFO     uvicorn.access  172.20.0.1:46822 - "POST /api/v1/collections/test/add HTTP/1.1" 201
+2023-05-15 19:32:45 INFO     uvicorn.access  172.20.0.1:41544 - "POST /api/v1/reset HTTP/1.1" 200
+2023-05-15 19:40:43 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:40:43 INFO     uvicorn.access  172.20.0.1:42650 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:40:51 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-15 19:40:52 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-15 19:40:52 INFO     uvicorn.access  172.20.0.1:42656 - "POST /api/v1/collections/demodb/add HTTP/1.1" 201
+2023-05-15 19:54:52 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 19:54:52 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:54:52 INFO     uvicorn.access  172.20.0.1:37940 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:55:07 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 19:55:07 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:55:08 INFO     uvicorn.access  172.20.0.1:54830 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:55:17 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 19:55:17 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:55:18 INFO     uvicorn.access  172.20.0.1:41148 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:56:50 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 19:56:50 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:56:50 INFO     uvicorn.access  172.20.0.1:33658 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:56:51 INFO     uvicorn.access  172.20.0.1:33660 - "POST /api/v1/collections/demodb/query HTTP/1.1" 500
+2023-05-15 19:57:21 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 19:57:21 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:57:21 INFO     uvicorn.access  172.20.0.1:36260 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:58:14 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 5.4836273193359375e-06
+2023-05-15 19:58:14 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.0006282329559326172
+2023-05-15 19:58:14 INFO     uvicorn.access  172.20.0.1:58898 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-15 19:58:25 INFO     uvicorn.access  172.20.0.1:34026 - "POST /api/v1/collections/demodb/query HTTP/1.1" 500
+2023-05-15 19:59:34 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 19:59:34 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 19:59:34 INFO     uvicorn.access  172.20.0.1:37430 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 19:59:40 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 4.291534423828125e-06
+2023-05-15 19:59:40 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.00047016143798828125
+2023-05-15 19:59:40 INFO     uvicorn.access  172.20.0.1:37432 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-15 19:59:43 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 1.6689300537109375e-06
+2023-05-15 19:59:43 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.00017189979553222656
+2023-05-15 19:59:43 INFO     uvicorn.access  172.20.0.1:43866 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-15 20:06:27 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 20:06:27 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 20:06:28 INFO     uvicorn.access  172.20.0.1:52558 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 20:09:15 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 20:09:15 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 20:09:16 INFO     uvicorn.access  172.20.0.1:40318 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 20:09:16 INFO     uvicorn.access  172.20.0.1:40324 - "POST /api/v1/collections/demodb/query HTTP/1.1" 500
+2023-05-15 20:10:35 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 20:10:35 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 20:10:35 INFO     uvicorn.access  172.20.0.1:58022 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 20:10:43 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-15 20:10:43 INFO     uvicorn.access  172.20.0.1:37718 - "POST /api/v1/collections/demodb/add HTTP/1.1" 201
+2023-05-15 20:10:43 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 20:10:43 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 20:10:43 INFO     uvicorn.access  172.20.0.1:37724 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 20:10:44 INFO     uvicorn.access  172.20.0.1:37736 - "POST /api/v1/collections/demodb/query HTTP/1.1" 500
+2023-05-15 20:10:44 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 1.6689300537109375e-06
+2023-05-15 20:10:44 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.0002453327178955078
+2023-05-15 20:10:44 INFO     uvicorn.access  172.20.0.1:37748 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-15 20:11:06 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 20:11:06 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 20:11:07 INFO     uvicorn.access  172.20.0.1:60990 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 20:11:07 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 5.245208740234375e-06
+2023-05-15 20:11:07 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.0006253719329833984
+2023-05-15 20:11:07 INFO     uvicorn.access  172.20.0.1:60994 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-15 20:11:19 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 20:11:19 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 20:11:19 INFO     uvicorn.access  172.20.0.1:56566 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 20:11:20 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 4.76837158203125e-07
+2023-05-15 20:11:20 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.0001246929168701172
+2023-05-15 20:11:20 INFO     uvicorn.access  172.20.0.1:56576 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-15 20:12:09 INFO     uvicorn.error   Shutting down
+2023-05-15 20:12:09 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-15 20:12:09 INFO     uvicorn.error   Application shutdown complete.
+2023-05-15 20:12:09 INFO     uvicorn.error   Finished server process [8]
+2023-05-15 20:12:11 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-15 20:19:07 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-15 20:19:07 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-15 20:19:07 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-15 20:19:07 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-15 20:19:07 INFO     chromadb        Running Chroma using direct local API.
+2023-05-15 20:19:07 INFO     chromadb        Using Clickhouse for database
+2023-05-15 20:19:07 INFO     uvicorn.error   Started server process [8]
+2023-05-15 20:19:07 INFO     uvicorn.error   Waiting for application startup.
+2023-05-15 20:19:07 INFO     uvicorn.error   Application startup complete.
+2023-05-15 20:23:52 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 20:24:46 INFO     uvicorn.access  172.21.0.1:52338 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 20:24:54 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-15 20:24:54 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-15 20:24:54 INFO     uvicorn.access  172.21.0.1:58082 - "POST /api/v1/collections/demodb/add HTTP/1.1" 201
+2023-05-15 20:24:54 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 9.5367431640625e-07
+2023-05-15 20:24:54 DEBUG    chromadb.db.index.hnswlib time to run knn query: 9.202957153320312e-05
+2023-05-15 20:24:54 INFO     uvicorn.access  172.21.0.1:58094 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-15 20:25:14 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-15 20:25:14 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-15 20:25:14 INFO     uvicorn.access  172.21.0.1:57778 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-15 20:25:15 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 9.5367431640625e-07
+2023-05-15 20:25:15 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.0001552104949951172
+2023-05-15 20:25:15 INFO     uvicorn.access  172.21.0.1:57784 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-15 21:27:18 INFO     uvicorn.error   Shutting down
+2023-05-15 21:27:18 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-15 21:27:18 INFO     uvicorn.error   Application shutdown complete.
+2023-05-15 21:27:18 INFO     uvicorn.error   Finished server process [8]
+2023-05-15 21:27:19 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-16 00:16:54 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-16 00:16:54 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-16 00:16:54 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-16 00:16:55 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 00:16:55 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 00:16:55 INFO     chromadb        Using Clickhouse for database
+2023-05-16 00:16:55 INFO     uvicorn.error   Started server process [8]
+2023-05-16 00:16:55 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 00:16:55 INFO     uvicorn.error   Application startup complete.
+2023-05-16 00:27:57 INFO     uvicorn.error   Shutting down
+2023-05-16 00:27:57 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 00:27:57 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 00:27:57 INFO     uvicorn.error   Finished server process [8]
+2023-05-16 00:27:58 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-16 00:29:48 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-16 00:29:48 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-16 00:29:48 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-16 00:29:49 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 00:29:49 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 00:29:49 INFO     chromadb        Using Clickhouse for database
+2023-05-16 00:29:49 INFO     uvicorn.error   Started server process [8]
+2023-05-16 00:29:49 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 00:29:49 INFO     uvicorn.error   Application startup complete.
+2023-05-16 00:32:44 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-16 00:33:13 INFO     uvicorn.access  172.28.0.2:58206 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-16 00:33:20 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-16 00:33:20 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-16 00:33:20 INFO     uvicorn.access  172.28.0.2:35098 - "POST /api/v1/collections/demodb/add HTTP/1.1" 201
+2023-05-16 00:33:20 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 7.152557373046875e-07
+2023-05-16 00:33:20 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.00011420249938964844
+2023-05-16 00:33:20 INFO     uvicorn.access  172.28.0.2:35106 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-16 00:33:57 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 00:33:57 INFO     uvicorn.error   Shutting down
+2023-05-16 00:33:57 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 00:33:57 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 00:33:57 INFO     uvicorn.error   Finished server process [8]
+2023-05-16 00:33:59 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 00:33:59 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 00:33:59 INFO     chromadb        Using Clickhouse for database
+2023-05-16 00:33:59 INFO     uvicorn.error   Started server process [29]
+2023-05-16 00:33:59 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 00:33:59 INFO     uvicorn.error   Application startup complete.
+2023-05-16 00:34:08 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 00:34:08 INFO     uvicorn.error   Shutting down
+2023-05-16 00:34:08 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 00:34:08 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 00:34:08 INFO     uvicorn.error   Finished server process [29]
+2023-05-16 00:34:09 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 00:34:09 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 00:34:09 INFO     chromadb        Using Clickhouse for database
+2023-05-16 00:34:09 INFO     uvicorn.error   Started server process [35]
+2023-05-16 00:34:09 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 00:34:09 INFO     uvicorn.error   Application startup complete.
+2023-05-16 00:35:17 INFO     uvicorn.error   Shutting down
+2023-05-16 00:35:17 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 00:35:17 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 00:35:17 INFO     uvicorn.error   Finished server process [35]
+2023-05-16 00:35:18 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-16 00:35:20 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-16 00:35:20 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-16 00:35:20 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-16 00:35:21 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 00:35:21 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 00:35:21 INFO     chromadb        Using Clickhouse for database
+2023-05-16 00:35:21 INFO     uvicorn.error   Started server process [9]
+2023-05-16 00:35:21 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 00:35:21 INFO     uvicorn.error   Application startup complete.
+2023-05-16 00:37:29 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-16 00:37:29 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-16 00:37:54 INFO     uvicorn.access  172.28.0.2:39640 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-16 00:38:02 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-16 00:38:02 INFO     uvicorn.access  172.28.0.2:34258 - "POST /api/v1/collections/demodb/add HTTP/1.1" 201
+2023-05-16 00:40:27 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-16 00:40:28 INFO     uvicorn.access  172.28.0.1:56616 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-16 00:40:36 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-16 00:40:36 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-16 00:40:36 INFO     uvicorn.access  172.28.0.1:34354 - "POST /api/v1/collections/demodb2/add HTTP/1.1" 201
+2023-05-16 00:40:36 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 7.152557373046875e-07
+2023-05-16 00:40:36 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.00013971328735351562
+2023-05-16 00:40:36 INFO     uvicorn.access  172.28.0.1:34370 - "POST /api/v1/collections/demodb2/query HTTP/1.1" 200
+2023-05-16 00:43:08 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 00:43:08 INFO     uvicorn.error   Shutting down
+2023-05-16 00:43:08 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 00:43:08 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 00:43:08 INFO     uvicorn.error   Finished server process [9]
+2023-05-16 00:43:10 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 00:43:10 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 00:43:10 INFO     chromadb        Using Clickhouse for database
+2023-05-16 00:43:10 INFO     uvicorn.error   Started server process [34]
+2023-05-16 00:43:10 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 00:43:10 INFO     uvicorn.error   Application startup complete.
+2023-05-16 00:44:22 INFO     uvicorn.error   Shutting down
+2023-05-16 00:44:22 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 00:44:22 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 00:44:22 INFO     uvicorn.error   Finished server process [34]
+2023-05-16 00:44:23 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-16 00:57:51 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-16 00:57:51 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-16 00:57:51 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-16 00:57:52 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 00:57:52 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 00:57:52 INFO     chromadb        Using Clickhouse for database
+2023-05-16 00:57:52 INFO     uvicorn.error   Started server process [8]
+2023-05-16 00:57:52 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 00:57:52 INFO     uvicorn.error   Application startup complete.
+2023-05-16 00:58:37 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-16 00:58:58 INFO     uvicorn.access  172.29.0.3:52374 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-16 00:59:07 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-16 00:59:07 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-16 00:59:07 INFO     uvicorn.access  172.29.0.3:39174 - "POST /api/v1/collections/demodb/add HTTP/1.1" 201
+2023-05-16 01:00:58 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-16 01:00:59 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-16 01:00:59 INFO     uvicorn.access  172.29.0.3:53698 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-16 01:02:27 DEBUG    chromadb.db.index.hnswlib Index saved to .chroma/index/index.bin
+2023-05-16 01:02:27 INFO     uvicorn.access  172.29.0.3:52302 - "POST /api/v1/collections/demodb/add HTTP/1.1" 201
+2023-05-16 01:04:06 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-16 01:04:06 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-16 01:04:07 INFO     uvicorn.access  172.29.0.1:48596 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-16 01:04:13 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 1.2636184692382812e-05
+2023-05-16 01:04:13 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.014475107192993164
+2023-05-16 01:04:13 INFO     uvicorn.access  172.29.0.1:49050 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-16 01:07:58 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 01:07:59 INFO     uvicorn.error   Shutting down
+2023-05-16 01:07:59 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 01:07:59 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 01:07:59 INFO     uvicorn.error   Finished server process [8]
+2023-05-16 01:08:01 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 01:08:01 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 01:08:01 INFO     chromadb        Using Clickhouse for database
+2023-05-16 01:08:01 INFO     uvicorn.error   Started server process [40]
+2023-05-16 01:08:01 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 01:08:01 INFO     uvicorn.error   Application startup complete.
+2023-05-16 01:09:21 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 01:09:21 INFO     uvicorn.error   Shutting down
+2023-05-16 01:09:21 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 01:09:21 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 01:09:21 INFO     uvicorn.error   Finished server process [40]
+2023-05-16 01:09:22 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 01:09:22 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 01:09:22 INFO     chromadb        Using Clickhouse for database
+2023-05-16 01:09:22 INFO     uvicorn.error   Started server process [46]
+2023-05-16 01:09:22 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 01:09:22 INFO     uvicorn.error   Application startup complete.
+2023-05-16 01:09:33 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 01:09:33 INFO     uvicorn.error   Shutting down
+2023-05-16 01:09:33 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 01:09:33 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 01:09:33 INFO     uvicorn.error   Finished server process [46]
+2023-05-16 01:09:34 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 01:09:34 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 01:09:34 INFO     chromadb        Using Clickhouse for database
+2023-05-16 01:09:34 INFO     uvicorn.error   Started server process [52]
+2023-05-16 01:09:34 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 01:09:34 INFO     uvicorn.error   Application startup complete.
+2023-05-16 01:09:40 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 01:09:40 INFO     uvicorn.error   Shutting down
+2023-05-16 01:09:40 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 01:09:40 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 01:09:40 INFO     uvicorn.error   Finished server process [52]
+2023-05-16 01:09:41 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 01:09:41 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 01:09:41 INFO     chromadb        Using Clickhouse for database
+2023-05-16 01:09:41 INFO     uvicorn.error   Started server process [58]
+2023-05-16 01:09:41 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 01:09:41 INFO     uvicorn.error   Application startup complete.
+2023-05-16 01:10:36 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 01:10:36 INFO     uvicorn.error   Shutting down
+2023-05-16 01:10:36 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 01:10:36 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 01:10:36 INFO     uvicorn.error   Finished server process [58]
+2023-05-16 01:10:37 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 01:10:37 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 01:10:37 INFO     chromadb        Using Clickhouse for database
+2023-05-16 01:10:37 INFO     uvicorn.error   Started server process [64]
+2023-05-16 01:10:37 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 01:10:37 INFO     uvicorn.error   Application startup complete.
+2023-05-16 01:16:30 INFO     uvicorn.error   Shutting down
+2023-05-16 01:16:31 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 01:16:31 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 01:16:31 INFO     uvicorn.error   Finished server process [64]
+2023-05-16 01:16:31 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-16 01:16:32 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-16 01:16:32 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-16 01:16:32 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-16 01:16:32 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 01:16:32 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 01:16:32 INFO     chromadb        Using Clickhouse for database
+2023-05-16 01:16:32 INFO     uvicorn.error   Started server process [8]
+2023-05-16 01:16:32 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 01:16:32 INFO     uvicorn.error   Application startup complete.
+2023-05-16 01:17:36 INFO     chromadb.db.clickhouse collection with name demodb already exists, returning existing collection
+2023-05-16 01:17:36 WARNING  chromadb.api.models.Collection No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction
+2023-05-16 01:18:02 INFO     uvicorn.access  172.29.0.3:53432 - "POST /api/v1/collections HTTP/1.1" 200
+2023-05-16 01:18:02 DEBUG    chromadb.db.index.hnswlib time to pre process our knn query: 1.049041748046875e-05
+2023-05-16 01:18:02 DEBUG    chromadb.db.index.hnswlib time to run knn query: 0.003170013427734375
+2023-05-16 01:18:02 INFO     uvicorn.access  172.29.0.3:39194 - "POST /api/v1/collections/demodb/query HTTP/1.1" 200
+2023-05-16 01:19:40 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 01:19:40 INFO     uvicorn.error   Shutting down
+2023-05-16 01:19:40 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 01:19:40 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 01:19:40 INFO     uvicorn.error   Finished server process [8]
+2023-05-16 01:19:42 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 01:19:42 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 01:19:42 INFO     chromadb        Using Clickhouse for database
+2023-05-16 01:19:42 INFO     uvicorn.error   Started server process [25]
+2023-05-16 01:19:42 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 01:19:42 INFO     uvicorn.error   Application startup complete.
+2023-05-16 01:20:49 INFO     uvicorn.error   Shutting down
+2023-05-16 01:20:50 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 01:20:50 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 01:20:50 INFO     uvicorn.error   Finished server process [25]
+2023-05-16 01:20:50 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-16 21:10:52 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-16 21:10:52 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-16 21:10:52 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-16 21:10:53 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 21:10:53 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 21:10:53 INFO     chromadb        Using Clickhouse for database
+2023-05-16 21:10:53 INFO     uvicorn.error   Started server process [7]
+2023-05-16 21:10:53 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 21:10:53 INFO     uvicorn.error   Application startup complete.
+2023-05-16 21:14:01 INFO     uvicorn.error   Shutting down
+2023-05-16 21:14:01 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 21:14:01 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 21:14:01 INFO     uvicorn.error   Finished server process [7]
+2023-05-16 21:14:01 INFO     uvicorn.error   Stopping reloader process [1]
+2023-05-16 21:14:02 INFO     uvicorn.error   Will watch for changes in these directories: ['/chroma']
+2023-05-16 21:14:02 INFO     uvicorn.error   Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2023-05-16 21:14:02 INFO     uvicorn.error   Started reloader process [1] using WatchFiles
+2023-05-16 21:14:03 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 21:14:03 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 21:14:03 INFO     chromadb        Using Clickhouse for database
+2023-05-16 21:14:03 INFO     uvicorn.error   Started server process [7]
+2023-05-16 21:14:03 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 21:14:03 INFO     uvicorn.error   Application startup complete.
+2023-05-16 21:15:28 INFO     uvicorn.access  192.168.0.1:57974 - "GET / HTTP/1.1" 404
+2023-05-16 21:15:29 INFO     uvicorn.access  192.168.0.1:57974 - "GET /favicon.ico HTTP/1.1" 404
+2023-05-16 21:18:27 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 21:18:27 INFO     uvicorn.error   Shutting down
+2023-05-16 21:18:27 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 21:18:27 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 21:18:27 INFO     uvicorn.error   Finished server process [7]
+2023-05-16 21:18:28 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 21:18:28 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 21:18:28 INFO     chromadb        Using Clickhouse for database
+2023-05-16 21:18:28 INFO     uvicorn.error   Started server process [14]
+2023-05-16 21:18:28 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 21:18:28 INFO     uvicorn.error   Application startup complete.
+2023-05-16 21:18:39 WARNING  uvicorn.error   WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+2023-05-16 21:18:39 INFO     uvicorn.error   Shutting down
+2023-05-16 21:18:39 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 21:18:39 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 21:18:39 INFO     uvicorn.error   Finished server process [14]
+2023-05-16 21:18:40 INFO     chromadb.telemetry.posthog Anonymized telemetry enabled. See https://docs.trychroma.com/telemetry for more information.
+2023-05-16 21:18:40 INFO     chromadb        Running Chroma using direct local API.
+2023-05-16 21:18:40 INFO     chromadb        Using Clickhouse for database
+2023-05-16 21:18:40 INFO     uvicorn.error   Started server process [20]
+2023-05-16 21:18:40 INFO     uvicorn.error   Waiting for application startup.
+2023-05-16 21:18:40 INFO     uvicorn.error   Application startup complete.
+2023-05-16 21:19:39 INFO     uvicorn.error   Shutting down
+2023-05-16 21:19:39 INFO     uvicorn.error   Waiting for application shutdown.
+2023-05-16 21:19:39 INFO     uvicorn.error   Application shutdown complete.
+2023-05-16 21:19:39 INFO     uvicorn.error   Finished server process [20]
+2023-05-16 21:19:39 INFO     uvicorn.error   Stopping reloader process [1]
