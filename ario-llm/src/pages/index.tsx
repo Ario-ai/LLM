@@ -1,27 +1,37 @@
+
 'use-client'
 
-import styles from '../styles/index.module.css'
+import  '../styles/global.css'
 import { useEffect, useState } from 'react';
 import { Input, Sheet, Button, Stack } from '@mui/joy';
 import BotBubble from '@/components/BotBubble';
+import UserBubble from '@/components/UserBubble';
+import Header from '@/components/Header';
 
 export default function Home() {
 
   const [convo, setConvo] = useState<{ isUser: boolean, txt: string }[]>([])
 
-  useEffect(() => { console.log(convo) }, [convo])
+  // useEffect(() => { console.log(convo) }, [convo])
 
-
-  const UserBubble = ({ children }: { children: any }) => <Sheet sx={{ backgroundColor: 'red', color: 'white', textAlign: 'right', ':hover': { backgroundColor: 'darkred' } }}>{children}</Sheet>
 
   const SendButton = () => <Button type="submit">Send</Button>
 
   const ChatInput = () => {
     const [userInput, setUserInput] = useState<string>('');
 
+    const onChatSubmit = () => {
+      fetch("/api/chat/"+userInput, { // "/my_external_api" as an alternative
+        method: "POST",
+      })
+      .then(res => res.text())
+      .then(txt => setConvo([...convo, { isUser: true, txt: userInput }, { isUser: false, txt }]))
+      .catch((e) => console.log(e));
+    }
+  
     return <form
       onSubmit={(e) => {
-        setConvo([...convo, { isUser: true, txt: userInput }, { isUser: false, txt: 'bot response' }])
+        onChatSubmit()
         e.preventDefault();
       }}
     >
@@ -37,21 +47,22 @@ export default function Home() {
   }
 
   const ChatWindow = ({ children }: { children: any }) => {
-    return <Sheet>
+    return <Sheet >
       <Stack my={1}
         spacing={2}
-        height={'75vh'}>
+        height={'75vh'} paddingY={2} sx={{ backgroundColor: '#EFEFEF', borderRadius: 8, overflowY: 'scroll'}}>
         {children}
       </Stack>
-      <ChatInput />
     </Sheet>
   }
 
   return (
-    <main className={styles.main}>
+    <main >
+      <Header title="Demo Chat" />
       <ChatWindow>
         {convo.map(c => c.isUser ? <UserBubble>{c.txt}</UserBubble> : <BotBubble>{c.txt}</BotBubble>)}
       </ChatWindow>
+      <ChatInput />
     </main>
   )
 }

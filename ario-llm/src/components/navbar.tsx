@@ -4,7 +4,7 @@ import Person from '@mui/icons-material/Person';
 
 export default function Navbar() {
   return (
-    <Box component="nav" aria-label="My site" sx={{ flexGrow: 1 }}>
+    <Box component="nav" aria-label="My site" sx={{ flexGrow: 1, backgroundColor: 'white', padding: 1 }} >
       <List role="menubar" orientation="horizontal">
         <ListItem role="none">
           <ListItemButton
@@ -13,19 +13,19 @@ export default function Navbar() {
             href="/"
             aria-label="Home"
           >
-            FlyteGPT
+            ArioGPT
           </ListItemButton>
         </ListItem>
         <ListDivider />
         <ListItem role="none">
           <ListItemButton role="menuitem" component="a" href="/">
-            Hoot
+            Hooty-hoot
           </ListItemButton>
         </ListItem>
-        <ListDivider />
+        {/* <ListDivider /> */}
         <ListItem role="none">
-          <ListItemButton role="menuitem" component="a" href="/">
-            Dive 
+          <ListItemButton role="menuitem" component="a" href="/ask">
+            Query 
           </ListItemButton>
         </ListItem>
         <ListItem role="none" sx={{ marginInlineStart: 'auto' }}>
